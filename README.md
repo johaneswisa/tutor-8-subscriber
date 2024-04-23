@@ -18,3 +18,6 @@ the second guest, and what is localhost:5672 is for?
 -"5672" adalah nomor port default untuk komunikasi AMQP.
 
 Jadi, "guest:guest@localhost:5672" menunjukkan bahwa nama pengguna untuk otentikasi adalah "guest", kata sandinya juga "guest", dan broker/server AMQP berjalan di mesin lokal pada port 5672.
+
+Karena program subscriber berjalan lebih lambat dari sebelumnya (code thread sleep) maka akan terjadi antrean messages sebelum akhirnya diterima oleh subscriber. Saya mendapatkan queued messages bernilai 10 yang menunjukan terdapat 10 messages yang ada pada antrian sebelum diterima oleh subsriber.
+![alt text](<Screenshot (528).png>)
