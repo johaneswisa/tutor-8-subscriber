@@ -21,3 +21,7 @@ Jadi, "guest:guest@localhost:5672" menunjukkan bahwa nama pengguna untuk otentik
 
 Karena program subscriber berjalan lebih lambat dari sebelumnya (code thread sleep) maka akan terjadi antrean messages sebelum akhirnya diterima oleh subscriber. Saya mendapatkan queued messages bernilai 10 yang menunjukan terdapat 10 messages yang ada pada antrian sebelum diterima oleh subsriber.
 ![alt text](<Screenshot (528).png>)
+
+Setiap subscriber menerima pesan yang berbeda-beda. Ketiga subscriber berjalan secara paralel sehingga data publisher yang sudah diterima oleh satu subscriber tidak diterima dan tidak diproses oleh subscriber yang lain. Oleh karena itu, grafik chart queued messages mengalami penurunan yang lebih cepat dibandingkan saat hanya menjalankan satu subscriber. Yang bisa di-improve dari code adalah menggunakan enivronment variables untuk mengkonfigurasi URL (atau parameter lainnya) untuk meningkatkan portabilitas, keamanan, dan fleksibilitas aplikasi.
+![alt text](<Screenshot (531).png>)
+![alt text](<Screenshot (530).png>)
